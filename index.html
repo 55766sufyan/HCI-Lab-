@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page with Theme Toggle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  <div class="theme-toggle">
+    <button id="toggleBtn">Switch to Dark Mode</button>
+  </div>
+
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button class="login-btn">Login</button>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-theme");
+      body.classList.toggle("light-theme");
+
+      if (body.classList.contains("dark-theme")) {
+        toggleBtn.innerText = "Switch to Light Mode";
+      } else {
+        toggleBtn.innerText = "Switch to Dark Mode";
+      }
+    });
+  </script>
+</body>
+</html>
